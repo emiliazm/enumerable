@@ -39,4 +39,26 @@ module MyEnumerable
     end
     minnum
   end
+
+  def sort(&block)
+    sorted_array = []
+    each do |item|
+      sorted_array << item
+    end
+    sorted_array.sort_by(&block)
+    #   i = 0
+    #   while i < sorted_array.length
+    #     j = 0
+    #     while j < sorted_array.length -1
+    #       if yield(sorted_array[j], sorted_array[j + 1]) == -1
+    #         aux = sorted_array[j]
+    #         sorted_array[j] = sorted_array[j + 1]
+    #         sorted_array[j] = aux
+    #       end
+    #       j+=1
+    #     end
+    #     i+=1
+    #   end
+    #   sorted_array
+  end
 end
