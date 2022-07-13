@@ -5,4 +5,11 @@ module MyEnumerable
     end
     true
   end
+
+  def any? 
+    each do |item|
+      return true unless !yield item
+    end
+    false
+  end
 end
