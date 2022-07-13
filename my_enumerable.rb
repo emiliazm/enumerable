@@ -20,4 +20,14 @@ module MyEnumerable
     end
     new_list
   end
+
+  # { |a, b| a <=> b }
+  def max
+    maxnum = nil
+    each do |item|
+      maxnum = item if maxnum.nil?
+      maxnum = item if yield(maxnum, item) == -1 && !maxnum.nil?
+    end
+    maxnum
+  end
 end
