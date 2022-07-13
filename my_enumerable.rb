@@ -30,4 +30,13 @@ module MyEnumerable
     end
     maxnum
   end
+
+  def min
+    minnum = nil
+    each do |item|
+      minnum = item if minnum.nil?
+      minnum = item if yield(minnum, item) == 1 && !minnum.nil?
+    end
+    minnum
+  end
 end

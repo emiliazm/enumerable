@@ -6,3 +6,4 @@ list.any? { |e| e == 2 }
 list.any? { |e| e == 5 }
 list.filter(&:even?)
 list.max { |a, b| a <=> b }
+list.min { |a, b| a <=> b }
