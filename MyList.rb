@@ -1,7 +1,7 @@
-# require_relative 'MyEnumerable'
+require_relative "MyEnumerable"
 
 class MyList
-  # include MyEnumerable
+  include MyEnumerable
   def initialize(*args)
     @list = args
   end
@@ -14,3 +14,5 @@ class MyList
 end
 
 list = MyList.new(1, 2, 3, 4)
+list.each {|item| puts item}
+list.all? {|e| e < 5}
