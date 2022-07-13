@@ -6,9 +6,9 @@ module MyEnumerable
     true
   end
 
-  def any? 
+  def any?
     each do |item|
-      return true unless !yield item
+      return true if yield item
     end
     false
   end
@@ -20,5 +20,4 @@ module MyEnumerable
     end
     new_list
   end
-
 end
